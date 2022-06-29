@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>按钮</button>
+    <script>
+        //利用页面加载事件预处理动作
+        //只能写一次，后面会覆盖前面
+        var btn = document.querySelector('button');
+        window.onload = function(){
+            btn.addEventListener('click',function(){
+                alert('已点击');
+            })
+        }
+
+        //可以用新方法写onload
+        window.addEventListener('load',function(){
+            btn.addEventListener('click',function(){
+                alert('已点击');
+            })
+        })
+
+        window.addEventListener('load',function(){
+            alert(22);
+        })
+
+        //窗口加载事件
+        document.addEventListener('DOMContentLoaded',function(){
+            alert(33);
+        })
+    </script>
+</body>
+</html>

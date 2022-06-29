@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 利用调用函数setTimeout(调用函数，延时时间);
+        //setTimeout在调用时可以省略window
+        // 单位为毫秒，可以省略
+        setTimeout(function(){
+            console.log('haha');
+        },2000)
+        // 这个调用函数可以写函数，也可直接写函数名,也可写'函数名',但不提倡
+        function callback(){
+            console.log('heihei');
+        }
+        // 页面中有很多定时器，索引需要加标识符
+       var timer1 =  setTimeout(callback,3000);
+    </script>
+</body>
+</html>

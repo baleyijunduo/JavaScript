@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //1.使用Date
+        //不带参数时，返回当前时间
+        var date = new Date;
+        console.log(date);
+        //2.带参数写法：2019，10，01 或者'2019-10-1 8:8:8'
+        var date2 = new Date(2019,10,01);
+        console.log(date2);
+        
+        var date3 = new Date('2019-1-11 8:8:8')
+        console.log(date3);
+
+        //返回年，月，日，周几
+        var date4 = new Date;
+        console.log(date4.getFullYear());
+        console.log(date4.getMonth());//月份会少一个月
+        console.log(date4.getDate());
+        console.log(date.getDay()) // 周日是0
+        //时分秒同理
+
+        //获取1970年至今的毫秒数
+        //1.通过valueOf（） getTime（）
+        var date5 = new Date();
+        console.log(date5.getTime());
+        console.log(date5.valueOf());
+        //2.简单写法
+        var date6 = +new Date();
+        console.log(date6);
+        //3.H5新增写法
+        console.log(Date.now());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

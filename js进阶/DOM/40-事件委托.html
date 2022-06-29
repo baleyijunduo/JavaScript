@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>我是雷浩</li>
+        <li>我是雷浩</li>
+        <li>我是雷浩</li>
+        <li>我是雷浩</li>
+        <li>我是雷浩</li>
+        <li>我是雷浩</li>
+    </ul>
+
+    <div class="da">
+        雷浩
+        <div>雷浩</div>
+        <div>雷浩</div>
+        <div>雷浩</div>
+        <div>雷浩</div>
+        <div>雷浩</div>
+    </div>
+    <script>
+        var ul = document.querySelector('ul');
+        var da = document.querySelector('.da');
+        //事件委托原理：为父节点添加监听器，利用冒泡影响子节点
+        ul.addEventListener('click',function(e){
+            e.target.style.backgroundColor = 'pink';
+        })
+
+        da.addEventListener('click',function(e){
+            e.target.style.backgroundColor = 'pink';
+        })
+    </script>
+</body>
+</html>

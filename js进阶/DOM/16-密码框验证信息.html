@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 600px;
+            margin: 100px auto;
+        }
+        .message {
+            display: inline-block;
+            font-size: 12px;
+            color: #999;
+            background: url(img/mess.png) no-repeat left center;
+            padding-left: 20px;
+        }
+
+        .message2{
+            color:red;
+            /* 替换背景图片 */
+            background-image: url(img/wrong.png);
+        }
+
+        .message3{
+            color:green;
+            /* 替换背景图片 */
+            background-image: url(img/right.png);
+        }
+    </style>
+</head>
+<body>
+    <div class="register">
+        <input type="password" class="ipt">
+        <p class="message">请输入6~16位密码</p>
+    </div>
+
+    <script>
+        var mess = document.querySelector('.message');
+        var input = document.querySelector('input');
+        // 失去焦点后
+        input.onblur = function(){
+            // 判断输入框内字数
+            if(this.value.length < 6 || this.value.length > 16){
+                mess.className = 'message message2';
+                mess.innerHTML = '输入格式不正确';
+            }
+            else{
+                mess.className = 'message message3';
+                mess.innerHTML = '输入格式正确';
+            }
+                
+        }
+    </script>
+</body>
+</html>

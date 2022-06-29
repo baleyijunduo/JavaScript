@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div getTime = "20" data-index="2" data-list-name="andy"></div>
+    <script>
+        var div = document.querySelector('div');
+        //用getAttribute得到自定义属性值
+        console.log(div.getAttribute('getTime'));
+        //可以用setAttribute设置自定义属性
+        div.setAttribute('data-time',20);
+        console.log(div.getAttribute('data-index'));
+        //利用H5新增方法
+        console.log(div.dataset.index);
+        //如果自定义属性有多个链接单词，需要驼峰命名获取
+        //有严重兼容性问题
+        console.log(div.dataset.listName);
+    </script>
+</body>
+</html>

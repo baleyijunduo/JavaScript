@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <li>雷浩</li>
+    <li>雷浩</li>
+    <li>雷浩</li>
+    <li>雷浩</li>
+    <li>雷浩</li>
+    <li>雷浩</li>
+    <li>雷浩</li>
+    <li>雷浩</li>
+
+    <ol id="ol">
+        <li>123</li>
+        <li>123</li>
+        <li>123</li>
+        <li>123</li>
+        <li>123</li>
+        <li>123</li>
+        <li>123</li>
+        <li>123</li>
+    </ol>
+    <script>
+        /* 返回获取的元素对象集合 伪数组形式存储 */
+        /* 找不到元素时，返回空的伪数组 */
+        var lis = document.getElementsByTagName('li');
+        console.log(lis);
+        /* 依次打印 */
+        for(var i = 0; i < lis.length; i++)
+        {
+            console.log(lis[i]);
+        }
+
+        /* 如果是父元素必须指定里面的单个元素 */
+        var ol = document.getElementsByTagName('ol');
+        console.log(ol[0].getElementsByTagName('li'));
+    </script>
+</body>
+</html>

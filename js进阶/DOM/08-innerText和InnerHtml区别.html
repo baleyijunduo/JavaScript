@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>123</div>
+    <p>123</p>
+    <script>
+        var div = document.querySelector('div');
+        var p = document.querySelector('p');
+        // 识别html标签 保留空格和换行
+        div.innerHTML = '<strong> 今天是 </strong> 2022';
+        // 不识别html标签 非标准 去除空格和换行
+        p.innerText = '<strong> 今天是 </strong> 2022';
+        // 这两个属性可以读写
+   </script>
+</body>
+</html>

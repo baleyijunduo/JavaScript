@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1.立即执行函数：不需要调用，立即执行
+        function fn(){
+            console.log(1);
+        }
+        fn();
+        //2.写法也可传参，第二个括号的参数可以传入function（）中
+        (function(a){
+            console.log(a);
+        })(1);
+        //3.写法也可以把后面的括号放里面
+        (function(a){
+            console.log(a);
+        }(1));
+
+        //作用是创建了独立的局部变量，使变量不会冲突
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            position: absolute;
+            top: 300px;
+            height: 100px;
+            width: 100px;
+            background: red;
+        }
+
+        span{
+            position: absolute;
+            height: 200px;
+            width: 200px;
+            background: black;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn800">雷浩开始跑800</button>
+    <button class="btn500">雷浩开始跑500</button>
+    <div>雷浩</div>
+    <script>
+        
+        //缓动动画让目标移动越来越慢
+        function animate(obj,target){
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function(){
+                
+                //核心算法：（目标值-现在位置）/10作为每次移动的距离步长
+                //用Math.ceil向上取整
+                var step = (target - obj.offsetLeft) / 10;
+                step = (step > 0 ? Math.ceil(step):Math.floor(step));
+
+                if(obj.offsetLeft == target){
+                    clearInterval(obj.timer);
+                }
+
+                obj.style.left = obj.offsetLeft + step + 'px';
+            },15);
+
+        //     btn.addEventListener('mouseout',function(){
+        //     div.style.left = star + 'px';
+        //     clearInterval(obj.timer);
+        // })
+        }
+        var div = document.querySelector('div');
+        var star = div.offsetLeft;
+        var btn800 = document.querySelector('.btn800');
+        var btn500 = document.querySelector('.btn500');
+        btn800.addEventListener('click',function(){
+            animate(div,800);
+        })
+
+        btn500.addEventListener('click',function(){
+            animate(div,500);
+        })
+
+        //animate(span,400);
+    </script>
+</body>
+</html>

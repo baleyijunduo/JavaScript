@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    我是雷浩我是雷浩
+
+    <script>
+        //鼠标右键禁用
+        document.addEventListener('contextmenu',function(e){
+            e.preventDefault();
+        })
+        //鼠标选中文字禁用
+        document.addEventListener('selectstart',function(e){
+            e.preventDefault();
+        })
+        //鼠标相对窗口坐标
+        document.addEventListener('click',function(e){
+            console.log(e.clientX);
+            console.log(e.clientY);
+        })
+        //鼠标相对页面坐标
+        document.addEventListener('click',function(e){
+            console.log(e.pageX);
+            console.log(e.pageY);
+        })
+    </script>
+</body>
+</html>

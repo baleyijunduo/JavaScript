@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <button class="set">存储所有数据</button>
+    <button class="get">获取所有数据</button>
+    <button class="remove">删除所有数据</button>
+    <button class="del">清空所有数据</button>
+
+    <script>
+        var ipt = document.querySelector('input');
+        var set = document.querySelector('.set');
+        var get = document.querySelector('.get');
+        var remove = document.querySelector('.remove');
+        var del = document.querySelector('.del')
+        // localStorage在网页关闭后数据也不消失
+        // 存储数据
+        set.addEventListener('click',function() {
+            var val = ipt.value;
+            localStorage.setItem('uname',val);
+        });
+        // 获取数据
+        get.addEventListener('click',function() {
+           console.log(localStorage.getItem('uname'));
+        });
+        // 删除数据
+        remove.addEventListener('click',function() {
+            localStorage.removeItem('uname');
+        });
+        // 清空数据
+        del.addEventListener('click',function() {
+            localStorage.clear();
+        });
+    </script>
+</body>
+</html>

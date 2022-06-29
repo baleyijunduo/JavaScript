@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            border: 10px solid red;
+            padding: 10px;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <div>我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩
+        我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩
+        我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩
+        我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩
+        我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩
+        我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩
+        我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩我是雷浩
+    </div>
+    <script>
+        //scrollHeight包含padding但不包含边框
+        //scroll显示的是内容真正的大小
+        var div = document.querySelector('div');
+        console.log(div.scrollWidth);
+        console.log(div.scrollHeight);
+        //div.scrollTop显示顶部被卷去部分的高度
+        console.log(div.scrollTop);
+        //滚动事件
+        div.addEventListener('scroll',function(){
+            console.log(div.scrollTop);
+        })
+    </script>
+</body>
+</html>

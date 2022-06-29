@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <button>发布</button>
+    <ul></ul>
+
+    <script>
+        //获取元素
+        var text = document.querySelector('textarea');
+        var btn = document.querySelector('button');
+        var ul = document.querySelector('ul');
+
+        //注册事件
+        btn.onclick = function(){
+            if(text.value == '')
+                alert('none');
+            else{
+                var li = document.createElement('li');
+                //javascript:;阻止链接跳转
+                li.innerHTML = text.value + "<a href = 'javascript:;'>删除</a>";
+                ul.appendChild(li);
+                //获取网页中的a标签链接
+                var as = document.querySelectorAll('a');
+                //循环注册事件
+                for(var i = 0; i < as.length; i++){
+                    as[i].onclick = function(){
+                        //删除父节点中的子节点
+                        ul.removeChild(this.parentNode);
+                        console.log(i);
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

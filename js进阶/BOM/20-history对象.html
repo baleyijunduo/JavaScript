@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="./20-history对象.html">点击去往</a>
+    <button>前进</button>
+    <button>后退</button>
+
+    <script>
+        var btn = document.querySelectorAll('button');
+        btn[0].addEventListener('click',function(){
+            history.forward();
+        })
+
+        btn[1].addEventListener('click',function(){
+            history.back();
+        })
+
+        //也可以用history.go(),参数为正数为前进，负数为后退
+    </script>
+</body>
+</html>

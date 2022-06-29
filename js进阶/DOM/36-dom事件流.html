@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father{
+            height: 200px;
+            width: 200px;
+            padding: 20px;
+            background-color: pink;
+        }
+
+        .son{
+            height: 100px;
+            width: 100px;
+            margin: auto;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son">son盒子</div>
+    </div>
+
+    <script>
+        //dom事件流有三个阶段
+        //js代码只能直线捕获或冒泡其中一阶段
+        //onclick 和 attachEvent只能得到冒泡阶段
+        //用addEventListerner，第三个参数写true就可以处于捕获阶段
+        //document -> html -> body -> father -> son
+        var son = document.querySelector('.son');
+        var father = document.querySelector('.father');
+        //因为事件流向，所以先出现father，后出现son
+        son.addEventListener('click',function(){
+            alert('son');
+        },true)
+
+        father.addEventListener('click',function(){
+            alert('father');
+        },true)
+
+        document.addEventListener('click',function(){
+            alert('document');
+        },true)
+        //若addEventListerner第三个参数写false或不写，则处于冒泡阶段
+        //先出现son，再出现father
+    </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        .box {
+            position: relative;
+            width: 74px;
+            height: 88px;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+            font-size: 12px;
+            text-align: center;
+            color: #f40;
+            display: block;
+        }
+        
+        .box img {
+            width: 60px;
+            margin-top: 5px;
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: -1px;
+            left: -16px;
+            width: 14px;
+            height: 14px;
+            border: 1px solid #ccc;
+            line-height: 14px;
+            font-family: Arial, Helvetica, sans-serif;
+            cursor: pointer;
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="box">
+        淘宝二维码
+        <img src="./img/tao.png" alt="">
+        <i class="close-btn">×</i>
+    </div>
+
+
+    <ul>
+        <li>我是雷浩</li>
+        <li>我是雷浩</li>
+        <li>我是雷浩</li>
+        <li>我是雷浩</li>
+        <li>我是雷浩</li>
+    </ul>
+    <script>
+        //通过子节点获取最近的父节点
+        var btn = document.querySelector('.close-btn');
+        console.log(btn.parentNode);
+
+        var ul = document.querySelector('ul');
+        //1.childNodes得到所有子节点，包含空格节点，文本节点，不提倡
+        //console.log(ul.childNodes);
+
+        for(var i = 0; i < ul.childNodes.length;i++){
+            //元素节点的nodeType是1
+            if(ul.childNodes[i].nodeType = 1){
+                console.log(ul.childNodes[i]);
+            }
+        }
+
+        //2.children可以获得所有元素节点
+        console.log(ul.children);
+
+        //获取第一个孩子和最后一个孩子
+        //firstElementChild获取第一个元素节点,有兼容性问题
+        //firstChild获取第一个节点
+        var ul2 = document.querySelector('ul');
+        console.log(ul2.firstElementChild);
+        //开发中选择的方法
+        console.log(ul2.children[0]);
+    </script>
+</body>
+</html>

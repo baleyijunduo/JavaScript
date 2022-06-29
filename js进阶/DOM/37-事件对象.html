@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            height: 100px;
+            width: 100px;
+            margin: 100px auto;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div>123</div>
+
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+
+    <script>
+        var div = document.querySelector('div');
+        //event是系统创建的事件对象，在监听函数中充当形参
+        //事件对象有事件参会存在
+        //他是事件一系列相关数据的集合
+        //有兼容性问题，需要通过window.event对ie兼容
+        div.addEventListener('click',function(e){
+            console.log(e);
+            //e = e || window.event;
+        })
+
+        //常见事件对象的属性和方法
+        //1.e.target 返回触发事件的对象,有兼容性问题
+        //2.this与e.target类似，但不同，this返回绑定事件对象
+        //currentTarget与this一致，但有兼容性问题
+        //e.type返回事件类型
+        div.addEventListener('click',function(e){
+            console.log(e.target);
+        })
+
+        var ul = document.querySelector('ul');
+        ul.addEventListener('click',function(e){
+            console.log(e.target);
+            console.log(this);
+            console.log(e.type);
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo" index = "1"></div>
+
+    <script>
+        var demo = document.getElementById('demo');
+        // 获取属性的方法
+        // （1）element.属性值
+        console.log(demo.id);
+        // (2) element.getAttribute（'属性'）
+        // 此方法可以获取自定义属性
+        console.log(demo.getAttribute('id'));
+        console.log(demo.getAttribute('index'));
+
+        // 设置属性值的方法
+        // （1）element.属性值更改
+        demo.id = 'test';
+        console.log(demo.getAttribute('index'));
+        // (2) element.setAttribute（'属性'）
+        // 此方法可以修改自定义属性
+        demo.setAttribute('index','mama');
+        console.log(demo.getAttribute('index'));
+
+        // 移除属性
+        demo.removeAttribute('index');
+        console.log(demo.getAttribute('index'));
+    </script>
+</body>
+</html>

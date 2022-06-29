@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //1.数字转字符串
+        //方法1 tostring()
+        var num = 18;
+        var str = num.toString();
+        console.log(typeof str);
+
+        //方法2 强制转换
+        console.log(typeof String(num));
+
+        //方法3 字符串拼接 隐式转换
+        num = num + '';
+        console.log(typeof num);
+
+        //2.转换为数字型
+        //方法1 利用parseInt()转换 只能取整
+        var age = '18';
+        console.log(parseInt(age))
+        console.log(typeof parseInt(age));
+
+        //方法2 利用parseFloat()转换
+        var age2 = '19';
+        console.log(parseFloat(age2))
+        console.log(typeof parseFloat(age2));
+
+        //方法3 利用Number()转换
+        var age3 = '20';
+        console.log(Number(age3))
+        console.log(typeof Number(age3));
+
+        //方法4 利用减乘除转换 隐式转换
+        var age4 = '21';
+        console.log(age4 - 0)
+        console.log(typeof (age4 - 0));
+
+        //3.bool类型转换
+        //用boolean();进行转换
+        var flag = 1;
+        console.log(typeof Boolean(flag));
+        Boolean('');//false
+        Boolean(0);//false
+        Boolean(NaN);//false
+        Boolean(null);//false
+        Boolean(undefined);//false
+
+        Boolean('123');//true
+        Boolean('你好吗');//true
+        Boolean('我很好');//true
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

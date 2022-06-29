@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">hezi</div>
+    <div class="box">hezi</div>
+    <div id = "nav">
+        <ul>
+            <li>11</li>
+            <li>22</li>
+        </ul>
+    </div>
+
+    <script>
+        /* H5新增方法，根据类名获取数据 */
+        var lis = document.getElementsByClassName('box');
+        console.log(lis);
+        // 返回选择器的第一个对象
+        var lis2 = document.querySelector('.box');
+        console.log(lis2);
+        var lis3 = document.querySelector('#nav');
+        console.log(lis3);
+        // 返回选择器所有对象
+        var lis4 = document.querySelectorAll('.box');
+        console.log(lis4)
+    </script>
+</body>
+</html>

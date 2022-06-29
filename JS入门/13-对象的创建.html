@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1.利用字面量创建对象
+        var obj = {
+            uname:'雷浩',
+            age : 18,
+            id : 01,
+            sayHi : function(){
+                console.log(arguments);
+                console.log('Hello!');
+            }
+        }
+
+        //调用属性
+        console.log(obj.uname);
+        console.log(obj['age']);
+        obj.sayHi(1,2,3);
+
+        //2.利用object创建对象
+        var obj2 = new Object();
+        obj2.uname = '浩浩';
+        obj2.age = 18;
+        obj2.id = 02;
+        obj.sayHi = function(){
+            console.log('Hello');
+        }
+        console.log(obj2.uname);
+        console.log(obj2['age']);
+        obj2.sayHi;
+
+        //利用构造函数创建对象
+        function Star(uname,age,id){
+            this.uname = uname;
+            this.age = age;
+            this.id = id;
+        }
+
+        var ldh = new Star('刘德华',50,01);
+        console.log(ldh.uname);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

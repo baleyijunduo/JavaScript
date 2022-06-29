@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            position: absolute;
+            top: 300px;
+            height: 100px;
+            width: 100px;
+            background: red;
+        }
+
+        span{
+            position: absolute;
+            height: 200px;
+            width: 200px;
+            background: black;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn800">雷浩开始跑800</button>
+    <button class="btn500">雷浩开始跑500</button>
+    <div>雷浩</div>
+    <script>
+        //把方法当作参数传入函数
+        function animate(obj,target,callback){
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function(){
+                var step = (target - obj.offsetLeft) / 10;
+                step = (step > 0 ? Math.ceil(step):Math.floor(step));
+
+                if(obj.offsetLeft == target){
+                    clearInterval(obj.timer);
+                }
+
+                obj.style.left = obj.offsetLeft + step + 'px';
+            },15);
+            //判断是否有参数传进来
+            if(callback){
+                callback();
+            }
+        }
+        var div = document.querySelector('div');
+        var star = div.offsetLeft;
+        var btn800 = document.querySelector('.btn800');
+        var btn500 = document.querySelector('.btn500');
+        btn800.addEventListener('click',function(){
+            animate(div,800,changecolor2);
+        })
+
+        btn500.addEventListener('click',function(){
+            animate(div,500,changecolor);
+        })
+
+        function changecolor(){
+            div.style.background = 'blue';
+        }
+
+        function changecolor2(){
+            div.style.background = 'green';
+        }
+        //animate(span,400);
+    </script>
+</body>
+</html>

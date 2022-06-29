@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .w{
+            width: 80%;
+            height: 500px;
+            text-align: center;
+            margin: 0 auto 50px;
+            background-color: pink;
+        }
+
+        .slider-bar{
+            position: absolute;
+            top: 50%;
+            left: 90%;
+            width: 40px;
+            height: 100px;
+            background-color: black;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="slider-bar">
+        <span class="goBack">返回顶部</span>
+    </div>
+    <div class="header w" style="background: green;">头部区域</div>
+    <div class="banner w" style="background: yellow;">banner区域</div>
+    <div class="main w" >主体部分</div>
+    <script>
+        //元素头部被卷去的长度用scrollTop，页面被卷曲的头部长度用window.pageYOffset
+        var sliderbar = document.querySelector('.slider-bar');
+        document.addEventListener('scroll',function(){
+            console.log(11);
+            console.log(window.pageYOffset);
+            if(window.pageYOffset >= 550){
+                sliderbar.style.position = 'fixed';
+                console.log(123);
+            }
+        })
+    </script>
+</body>
+</html>

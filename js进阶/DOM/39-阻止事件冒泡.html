@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father{
+            height: 200px;
+            width: 200px;
+            padding: 20px;
+            background-color: pink;
+        }
+
+        .son{
+            height: 100px;
+            width: 100px;
+            margin: auto;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son">son盒子</div>
+    </div>
+
+    <script>
+        var son = document.querySelector('.son');
+        var father = document.querySelector('.father');
+       
+        son.addEventListener('click',function(e){
+            alert('son');
+            //利用e.stopPropagation()阻止冒泡
+            //也可以利用e.cancelBubble = true阻止冒泡（非标准）
+            e.stopPropagation();
+            e.cancelBubble = true;
+
+            //兼容性写法
+            if(e && e.stopPropagation){
+                e.stopPropagation();
+            }else{
+                window.event.cancelBubble = true;
+            }
+        })
+
+        father.addEventListener('click',function(){
+            alert('father');
+        })
+
+        document.addEventListener('click',function(){
+            alert('document');
+        })
+    </script>
+</body>
+</html>
